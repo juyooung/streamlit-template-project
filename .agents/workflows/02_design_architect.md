@@ -35,8 +35,8 @@ PM이 정의한 데이터 유형을 바탕으로 **`ai-operational-standard.md`*
     * **[위젯 키 컨벤션 (Mandatory)]**: `DuplicateWidgetID` 에러 방지를 위해 아래 네이밍 문법을 아키텍처에 명시한다.
         * **멀티 페이지**: `[Page]__[Section]__[Variable]` (예: `SIR__Settings__Enable`)
         * **단일 페이지**: `[Section]__[Variable]` (예: `Validation__Uploader`)
-    * **[필드 수준 분석 (Field-Level Analysis)]**: 데이터 소스를 개별 필드 단위까지 분석하여 위젯을 매핑한다.
-    * **[구조적 소형화 (Structural Compression)]**: 분석할 필드가 방대할 경우, 중복된 위젯 패턴은 단 한 번만 추상적으로 정의(e.g., `st.text_input(label) + st.toggle("Enable")`)하고, 실제 데이터는 **표(Table) 형태로 나열**하여 문서 비대화를 방지한다.
+    * **[위젯 매핑 (Widget Mapping from Spec)]**: PM이 정의한 `Spec.md`의 데이터 필드와 비즈니스 의도를 바탕으로 최적의 위젯을 매핑합니다. 아키텍트는 소스 파일을 다시 분석하는 대신, 기획서에 명시된 모든 입력/출력 항목에 대해 기술적 구현 방식(위젯 결정, ID 부여)을 확정하는 데 집중합니다.
+    * **[구조적 소형화 (Structural Compression)]**: 매핑 항목이 방대할 경우, 중복 패턴은 추상적으로 정의하고 상세 데이터는 표(Table)로 나열하여 린 문서 표준을 유지합니다. 
     * **[매핑 우선순위 (Mapping Priority)]**: 린 문서 표준(Lean)을 준수하되, 아키텍처 설계 단계에서의 **'위젯-데이터 1:1 매핑 표'는 생략 불가능한 필수 섹션**으로 간주한다.
     * **[압축 표현 규격]**: 설계서 작성 시 장황한 서술을 지양하고 아래 규격을 준수한다.
         * **세션 상태**: Python `TypedDict` 및 `Literal`을 사용하여 스키마를 엄격히 정의한다.
