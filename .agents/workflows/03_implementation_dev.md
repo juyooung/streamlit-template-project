@@ -30,7 +30,8 @@ description: [03_implementation_dev] Developer Implementation Workflow
 
 4. **검증 가용성 확보 (Testability)**
     * 기능 구현 직후, 스스로 핵심 유즈케이스를 실행하여 로직의 정상 작동 여부를 선검증합니다.
-    * **[실행 증명 (Execution Evidence)]**: 코드를 수정하거나 배포한 직후에는 반드시 `read_terminal`을 통해 로그를 확인하거나, 브라우저 스크린샷 등을 통해 UI 상의 Runtime Error(Indentation 포함)가 없음을 1회 이상 교차 검증해야 한다.
+    * **[실행 확인]**: 코드 작성 완료 후, 직접 해당 파일을 실행하거나 터미널 로그를 확인하여 **Syntax Error(구문 오류) 및 Indentation Error(들여쓰기 오류)**가 없음을 확정한다.
+    * **[로그 보고]**: 실행 시 발생한 경고(Warning)나 에러가 있다면 즉시 수정하고, 문제가 없을 경우에만 `Project_Blueprint.md`를 업데이트한다.
     * 구현 완료 시 `Project_Blueprint.md`를 최신화하여 QA 단계로 명확히 인계합니다.
 
 ### 🏁 Validation Gate
